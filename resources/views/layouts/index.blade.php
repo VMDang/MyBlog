@@ -13,7 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="{{asset("assets/css/open-iconic-bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/animate.css")}}">
 
@@ -41,6 +40,7 @@
     <!-- Main Sidebar Container -->
     @yield('sidebar')
 
+    @yield('main_content')
     <div id="colorlib-main">
         <section class="ftco-section ftco-no-pt ftco-no-pb">
             <div class="container">
@@ -65,8 +65,7 @@
                 stroke="#F96D00"/>
     </svg>
 </div>
-
-
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <script src="{{asset("assets/js/jquery.min.js")}}"></script>
 <script src="{{asset("assets/js/jquery-migrate-3.0.1.min.js")}}"></script>
 <script src="{{asset("assets/js/popper.min.js")}}"></script>
@@ -81,6 +80,5 @@
 <script src="{{asset("assets/js/scrollax.min.js")}}"></script>
 {{--<script src="{{asset("assets/js/google-map.js")}}"></script>--}}
 <script src="{{asset("assets/js/main.js")}}"></script>
-
 </body>
 </html>

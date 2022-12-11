@@ -29,7 +29,7 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() {
 			if($('#ftco-loader').length > 0) {
 				$('#ftco-loader').removeClass('show');
 			}
@@ -49,10 +49,10 @@
 
 			if ($('body').hasClass('offcanvas')) {
 				$this.removeClass('active');
-				$('body').removeClass('offcanvas');	
+				$('body').removeClass('offcanvas');
 			} else {
 				$this.addClass('active');
-				$('body').addClass('offcanvas');	
+				$('body').addClass('offcanvas');
 			}
 		});
 	};
@@ -69,9 +69,9 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
-	    	
+
 	    }
 		});
 
@@ -80,7 +80,7 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
 		});
 
@@ -136,14 +136,14 @@
 	};
 	carousel();
 
-	
+
 
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -165,9 +165,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -175,7 +175,7 @@
 	contentWayPoint();
 
 	var counter = function() {
-		
+
 		$('#section-counter').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
@@ -192,7 +192,7 @@
 					  }, 7000
 					);
 				});
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -232,8 +232,51 @@
     fixedContentPos: false
   });
 
+    $(function(){
+        $("#colorlib-main-menu ul li").removeClass("active");
 
+        let current = location.pathname;
 
+        if (current !== '/'){
+            $('#colorlib-main-menu li a').each(function(){
+                let $this = $(this);
+
+                // if the current path is like this link, make it active
+                if($this.attr('href').indexOf(current) !== -1){
+                    $this.closest('li').addClass('colorlib-active');
+                }
+
+            })
+        }else {
+            $('#home').addClass('colorlib-active');
+        }
+    });
+
+    $(function () {
+        'use strict'
+        CKEDITOR.replace( 'subheadline' );
+        CKEDITOR.replace( 'body' );
+        let modalAddPost = $('#modalAddPost');
+
+        $('#btnAddPost').click(function() {
+            document.getElementById('modalAddPostTitle').innerText = 'Thêm bài viết mới';
+            modalAddPost.modal('show');
+        });
+
+        //Sự kiện Đóng modal
+        $('.closeModal').on('click', function() {
+            CKEDITOR.instances['subheadline'].setData('');
+            CKEDITOR.instances['body'].setData('');
+            // eventCloseHiddenModal(modalAddPost);
+        });
+
+        // Sự kiện ẩn modal
+        modalAddPost.on('hidden.bs.modal', function(){
+            CKEDITOR.instances['subheadline'].setData('');
+            CKEDITOR.instances['body'].setData('');
+            // eventCloseHiddenModal(modalAddPost);
+        });
+    })
 
 })(jQuery);
 

@@ -14,5 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+})->name('home');
+
+Route::get('/fashion/list', function (){
+    return view('fashion.list');
+})->name('fashion.list');
+
+Route::get('/travel/list', function (){
+    return view('fashion.list');
+})->name('travel.list');
+
+Route::get('/technology/list', function (){
+    return view('fashion.list');
+})->name('technology.list');
+
+Route::get('/post', function (){
+    return view('posts.post');
 });
+
