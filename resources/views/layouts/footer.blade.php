@@ -26,7 +26,7 @@
             <div class="overlay"></div>
             <h3 class="mb-4 sidebar-heading">Nhận thư mới</h3>
             <p class="mb-4">Hãy nhập địa chỉ email để nhận những bài viết mới nhất</p>
-            <form action="#" class="subscribe-form">
+            <form action="" class="subscribe-form">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nhập email">
                     <input type="submit" value="Gửi" class="mt-2 btn btn-white submit">
@@ -64,7 +64,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" id="formAddPost" class="form-horizontal" method="post">
+                <form action="{{route('savePost')}}" id="formAddPost" class="form-horizontal" method="post" enctype="multipart/form-data">
                     <!-- Modal body -->
                     @csrf
                     <div class="modal-body">
@@ -92,9 +92,9 @@
                             </div>
                         </div>
                         <div class="form-group row" >
-                            <label class="col-lg-3 col-form-label" for="subheadline">Tiêu đề phụ: <span class="text-danger">*</span></label>
+                            <label class="col-lg-3 col-form-label" for="sub_headline">Tiêu đề phụ: <span class="text-danger">*</span></label>
                             <div class="col-lg-9">
-                                <textarea type="text" name="subheadline" id="subheadline" class="form-control" required></textarea>
+                                <textarea type="text" name="sub_headline" id="sub_headline" class="form-control" required></textarea>
                             </div>
                         </div>
 

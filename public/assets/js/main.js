@@ -254,7 +254,7 @@
 
     $(function () {
         'use strict'
-        CKEDITOR.replace( 'subheadline' );
+        CKEDITOR.replace( 'sub_headline' );
         CKEDITOR.replace( 'body' );
         let modalAddPost = $('#modalAddPost');
 
@@ -265,14 +265,14 @@
 
         //Sự kiện Đóng modal
         $('.closeModal').on('click', function() {
-            CKEDITOR.instances['subheadline'].setData('');
+            CKEDITOR.instances['sub_headline'].setData('');
             CKEDITOR.instances['body'].setData('');
             // eventCloseHiddenModal(modalAddPost);
         });
 
         // Sự kiện ẩn modal
         modalAddPost.on('hidden.bs.modal', function(){
-            CKEDITOR.instances['subheadline'].setData('');
+            CKEDITOR.instances['sub_headline'].setData('');
             CKEDITOR.instances['body'].setData('');
             // eventCloseHiddenModal(modalAddPost);
         });

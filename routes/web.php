@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::post('/', [\App\Http\Controllers\PostController::class, 'savePost'])->name('savePost');
 
 Route::get('/fashion/list', function (){
     return view('fashion.list');
