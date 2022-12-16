@@ -5,27 +5,28 @@
         <section class="ftco-section">
             <div class="container">
                 <div class="row px-md-4">
-                    <div class="col-md-12">
-                        <div class="blog-entry ftco-animate d-md-flex">
-                            <a href="single.html" class="img img-2"
-                               style="background-image: url({{asset("assets/images/image_1.jpg")}});"></a>
-                            <div class="text text-2 pl-md-4">
-                                <h3 class="mb-2"><a href="single.html">A Loving Heart is the Truest Wisdom</a></h3>
-                                <div class="meta-wrap">
-                                    <p class="meta">
-                                        <span><i class="icon-calendar mr-2"></i>June 28, 2019</span>
-                                        <span><a href="single.html"><i
-                                                    class="icon-folder-o mr-2"></i>Travel</a></span>
-                                        <span><i class="icon-comment2 mr-2"></i>5 Comment</span>
-                                    </p>
+                    @foreach($list as $key => $post)
+                        <div class="col-md-12">
+                            <div class="blog-entry ftco-animate d-md-flex">
+                                <a href="" class="img img-2"
+                                   style="background-image: url({{asset("assets/images/posts/" . $post->image )}});"></a>
+
+                                <div class="text text-2 pl-md-4">
+                                    <h3 class="mb-2"><a href=""><?php echo $post->title;  ?></a></h3>
+                                    <div class="meta-wrap">
+                                        <p class="meta">
+                                            <span><i class="icon-calendar mr-2"></i>{{date('d/m/Y', strtotime($post->created_at))}}</span>
+                                            <span><a href=""><i class="icon-folder-o mr-2"></i>Công nghệ</a></span>
+                                            {{--                                    <span><i class="icon-comment2 mr-2"></i>5 Comment</span>--}}
+                                        </p>
+                                    </div>
+                                    <p class="mb-4"><?php echo $post->sub_headline;  ?></p>
+                                    <p><a href="#" class="btn-custom">Read More <span
+                                                class="ion-ios-arrow-forward"></span></a></p>
                                 </div>
-                                <p class="mb-4">A small river named Duden flows by their place and supplies it with
-                                    the necessary regelialia.</p>
-                                <p><a href="#" class="btn-custom">Read More <span
-                                            class="ion-ios-arrow-forward"></span></a></p>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
 {{--                <div class="row">--}}
 {{--                    <div class="col text-center text-md-left">--}}

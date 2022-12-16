@@ -15,18 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::post('/', [\App\Http\Controllers\PostController::class, 'savePost'])->name('savePost');
+Route::get('/test', [\App\Http\Controllers\PostController::class, 'countPostsOfCategory']);
 
-Route::get('/fashion/list', function (){
-    return view('fashion.list');
-})->name('fashion.list');
+Route::get('/fashion/list', [\App\Http\Controllers\PostController::class, 'listFashion'])->name('fashion.list');
+Route::get('/travel/list', [\App\Http\Controllers\PostController::class, 'listTravel'])->name('travel.list');
+Route::get('/technology/list', [\App\Http\Controllers\PostController::class, 'listTechnology'])->name('technology.list');
 
-Route::get('/travel/list', function (){
-    return view('fashion.list');
-})->name('travel.list');
-
-Route::get('/technology/list', function (){
-    return view('fashion.list');
-})->name('technology.list');
 
 Route::get('/post', function (){
     return view('posts.post');

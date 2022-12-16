@@ -2,6 +2,8 @@
 
 
 @section('footer')
+    <?php $count = session()->get('countPosts') ?>
+
     <div class="col-xl-4 sidebar ftco-animate bg-light pt-5" >
         <div class="sidebar-box pt-md-4" style="padding-bottom: 24px" >
             <div class="row-cols-md-1" style="float: left">
@@ -16,9 +18,9 @@
         <div class="sidebar-box ftco-animate">
             <h3 class="sidebar-heading">Thể loại</h3>
             <ul class="categories">
-                <li><a href="#">Thời trang <span>(6)</span></a></li>
-                <li><a href="#">Du lịch <span>(2)</span></a></li>
-                <li><a href="#">Công nghệ <span>(8)</span></a></li>
+                <li><a href="{{route('fashion.list')}}">Thời trang <span>({{$count['fashion']}})</span></a></li>
+                <li><a href="{{route('travel.list')}}">Du lịch <span>({{$count['travel']}})</span></a></li>
+                <li><a href="{{route('technology.list')}}">Công nghệ <span>({{$count['technology']}})</span></a></li>
             </ul>
         </div>
 

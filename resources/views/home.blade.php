@@ -17,11 +17,11 @@
                                     <span><i class="icon-calendar mr-2"></i>{{date('d/m/Y', strtotime($post->created_at))}}</span>
                                     <span><a href=""><i class="icon-folder-o mr-2"></i>
                                             @if($post->category_id == 1)
-                                                Fashion
+                                                Thời trang
                                             @elseif($post->category_id == 2)
-                                                Travel
+                                                Du lịch
                                             @elseif($post->category_id == 3)
-                                                Techonogy
+                                                Công nghệ
                                             @endif
                                         </a></span>
 {{--                                    <span><i class="icon-comment2 mr-2"></i>5 Comment</span>--}}
