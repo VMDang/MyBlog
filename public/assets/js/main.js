@@ -252,31 +252,5 @@
         }
     });
 
-    $(function () {
-        'use strict'
-        CKEDITOR.replace( 'sub_headline' );
-        CKEDITOR.replace( 'body' );
-        let modalAddPost = $('#modalAddPost');
-
-        $('#btnAddPost').click(function() {
-            document.getElementById('modalAddPostTitle').innerText = 'Thêm bài viết mới';
-            modalAddPost.modal('show');
-        });
-
-        //Sự kiện Đóng modal
-        $('.closeModal').on('click', function() {
-            CKEDITOR.instances['sub_headline'].setData('');
-            CKEDITOR.instances['body'].setData('');
-            // eventCloseHiddenModal(modalAddPost);
-        });
-
-        // Sự kiện ẩn modal
-        modalAddPost.on('hidden.bs.modal', function(){
-            CKEDITOR.instances['sub_headline'].setData('');
-            CKEDITOR.instances['body'].setData('');
-            // eventCloseHiddenModal(modalAddPost);
-        });
-    })
-
 })(jQuery);
 

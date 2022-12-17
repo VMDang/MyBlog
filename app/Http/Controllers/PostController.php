@@ -42,7 +42,7 @@ class PostController extends Controller
                 ->join('categories as c', 'p.category_id', '=', 'c.id')
                 ->where('c.name', '=', 'fashion')
                 ->orderBy('p.created_at', 'desc')
-                ->get();
+                ->get('p.*');
 
         return view('fashion.list', compact('list'));
     }
@@ -52,7 +52,7 @@ class PostController extends Controller
             ->join('categories as c', 'p.category_id', '=', 'c.id')
             ->where('c.name', '=', 'travel')
             ->orderBy('p.created_at', 'desc')
-            ->get();
+            ->get('p.*');
 
         return view('travel.list', compact('list'));
     }
@@ -62,27 +62,14 @@ class PostController extends Controller
             ->join('categories as c', 'p.category_id', '=', 'c.id')
             ->where('c.name', '=', 'technology')
             ->orderBy('p.created_at', 'desc')
-            ->get();
+            ->get('p.*');
 
         return view('technology.list', compact('list'));
     }
 
-    public function countPostsOfCategory(){
-        $countPosts = [];
+    public function showPost($id){
+        $post = Post::find($id);
 
-        $countPosts['fashion'] = DB::table('posts')
-                        ->where('category_id', '=', 1)
-                        ->count('id');
-
-        $countPosts['travel'] = DB::table('posts')
-                        ->where('category_id', '=', 2)
-                        ->count('id');
-
-        $countPosts['technology'] = DB::table('posts')
-            ->where('category_id', '=', 3)
-            ->count('id');
-
-        session()->put('countPosts', $countPosts);
-
+        return view('posts.post', compact('post'));
     }
 }

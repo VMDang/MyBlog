@@ -21,7 +21,7 @@
                                         </p>
                                     </div>
                                     <p class="mb-4"><?php echo $post->sub_headline;  ?></p>
-                                    <p><a href="#" class="btn-custom">Read More <span
+                                    <p><a href="{{route('post.show', $post->id)}}" class="btn-custom">Read More <span
                                                 class="ion-ios-arrow-forward"></span></a></p>
                                 </div>
                             </div>

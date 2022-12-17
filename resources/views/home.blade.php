@@ -1,7 +1,6 @@
 @extends("layouts.footer")
 
 @section("content")
-
     <div class="col-xl-8 py-5 px-md-5" >
         <div class="row pt-md-4">
             @foreach($posts as $key => $post)
@@ -28,7 +27,7 @@
                                 </p>
                             </div>
                             <p class="mb-4"><?php echo $post->sub_headline;  ?></p>
-                            <p><a href="#" class="btn-custom">Read More <span
+                            <p><a href="{{route('post.show', $post->id)}}" class="btn-custom">Read More <span
                                         class="ion-ios-arrow-forward"></span></a></p>
                         </div>
                     </div>
