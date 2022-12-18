@@ -8,16 +8,17 @@
                     @foreach($list as $key => $post)
                         <div class="col-md-12">
                             <div class="blog-entry ftco-animate d-md-flex">
-                                <a href="" class="img img-2"
+                                <a href="{{route('post.show', $post->id)}}" class="img img-2"
                                    style="background-image: url({{asset("assets/images/posts/" . $post->image )}});"></a>
 
                                 <div class="text text-2 pl-md-4">
-                                    <h3 class="mb-2"><a href=""><?php echo $post->title;  ?></a></h3>
+                                    <h3 class="mb-2"><a href="{{route('post.show', $post->id)}}"><?php echo $post->title;  ?></a></h3>
                                     <div class="meta-wrap">
                                         <p class="meta">
                                             <span><i class="icon-calendar mr-2"></i>{{date('d/m/Y', strtotime($post->created_at))}}</span>
-                                            <span><a href=""><i class="icon-folder-o mr-2"></i>Du lịch</a></span>
-                                            {{--                                    <span><i class="icon-comment2 mr-2"></i>5 Comment</span>--}}
+                                            <span><a href="{{route('travel.list')}}"><i class="icon-folder-o mr-2"></i>Du lịch</a></span>
+                                            <span><a href="{{route('editPost', $post->id)}}"><i class="icon-edit" style="color: green; padding: 4px"></i>Chỉnh sửa</a></span>
+                                            <span><a href="{{route('deletePost', $post->id)}}"><i class="icon-remove_circle" style="color: red; padding: 4px"></i>Xóa</a></span>
                                         </p>
                                     </div>
                                     <p class="mb-4"><?php echo $post->sub_headline;  ?></p>

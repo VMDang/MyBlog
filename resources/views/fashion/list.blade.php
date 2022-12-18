@@ -17,7 +17,8 @@
                                         <p class="meta">
                                             <span><i class="icon-calendar mr-2"></i>{{date('d/m/Y', strtotime($post->created_at))}}</span>
                                             <span><a href=""><i class="icon-folder-o mr-2"></i>Thời trang</a></span>
-                                            {{--                                    <span><i class="icon-comment2 mr-2"></i>5 Comment</span>--}}
+                                            <span><a href="{{route('editPost', $post->id)}}"><i class="icon-edit" style="color: green; padding: 4px"></i>Chỉnh sửa</a></span>
+                                            <span><a href="{{route('deletePost', $post->id)}}"><i class="icon-remove_circle" style="color: red; padding: 4px"></i>Xóa</a></span>
                                         </p>
                                     </div>
                                     <p class="mb-4"><?php echo $post->sub_headline;  ?></p>

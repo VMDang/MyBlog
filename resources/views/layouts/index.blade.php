@@ -80,6 +80,9 @@
 <script src="{{asset("assets/js/scrollax.min.js")}}"></script>
 {{--<script src="{{asset("assets/js/google-map.js")}}"></script>--}}
 <script src="{{asset("assets/js/main.js")}}"></script>
+<script type="text/javascript">
+    const BASE_URL = '{{url('')}}';
+</script>
 
 @yield('script')
 </body>

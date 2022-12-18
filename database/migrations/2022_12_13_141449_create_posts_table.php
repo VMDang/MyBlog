@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('image', 255);
             $table->text('sub_headline');
             $table->mediumText('body');
+            $table->tinyInteger('status')->default(1);
             $table->integer('category_id');
             $table->timestamps();
         });

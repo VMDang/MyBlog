@@ -11,6 +11,6 @@ class Post extends Model
     protected $table = 'posts';
 
     protected $fillable = [
-        'title', 'image', 'sub_headline', 'body', 'category_id', 'created_at', 'updated_at'
+        'title', 'image', 'sub_headline', 'body', 'status', 'category_id', 'created_at', 'updated_at'
     ];
 }

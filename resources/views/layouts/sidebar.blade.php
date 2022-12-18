@@ -8,7 +8,7 @@
                 <li><a href="{{route('fashion.list')}}">Thời trang</a></li>
                 <li><a href="{{route('travel.list')}}">Du lịch </a></li>
                 <li><a href="{{route('technology.list')}}">Công nghệ</a></li>
-                <li><a href="">Liên hệ</a></li>
+                <li><a href="{{route('contact')}}">Liên hệ</a></li>
             </ul>
         </nav>
 

@@ -27,6 +27,8 @@
                                             Công nghệ
                                         @endif
                                         </a></span>
+                                <span><a href="{{route('editPost', $post->id)}}"><i class="icon-edit" style="color: green; margin-left: 32px"></i>Chỉnh sửa</a></span>
+                                <span><a href="{{route('deletePost', $post->id)}}"><i class="icon-remove_circle" style="color: red; margin-left: 32px"></i>Xóa</a></span>
                             </p>
                         </div>
                         <?php echo $post->sub_headline?>

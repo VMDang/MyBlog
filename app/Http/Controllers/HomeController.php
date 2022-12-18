@@ -13,7 +13,7 @@ class HomeController
     }
 
     public function home(){
-        $posts = Post::all();
+        $posts = Post::where('status', 1)->get();
         $posts = $posts->reverse();
 
         $this->countPostsOfCategory();
@@ -25,17 +25,30 @@ class HomeController
         $countPosts = [];
 
         $countPosts['fashion'] = DB::table('posts')
-            ->where('category_id', '=', 1)
+            ->where([
+                ['category_id', '=', 1],
+                ['status', '=', 1]
+            ])
             ->count('id');
 
         $countPosts['travel'] = DB::table('posts')
-            ->where('category_id', '=', 2)
+            ->where([
+                ['category_id', '=', 2],
+                ['status', '=', 1]
+            ])
             ->count('id');
 
         $countPosts['technology'] = DB::table('posts')
-            ->where('category_id', '=', 3)
+            ->where([
+                ['category_id', '=', 3],
+                ['status', '=', 1]
+            ])
             ->count('id');
 
         session()->put('countPosts', $countPosts);
+    }
+
+    public function contact(){
+        return view('contact');
     }
 }
